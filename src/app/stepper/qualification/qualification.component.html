@@ -1,0 +1,106 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="qualification-header">
+        <mat-panel-title>
+            Education Qualification
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content1">
+        <form action="post" class="Education-Qualification-form" >
+            <div class="mb-40">
+                <p class="tf-15">Aggregate Percentage*</p>
+                <input type="text" name="Percentage" id="Percentage" placeholder="Enter Percentage"
+                    [(ngModel)]="logineducationqualification.percentage" required pattern="[0-9]+(\.[0-9]+)?"
+                    #percentage="ngModel">
+                <div *ngIf="percentage.invalid && percentage.touched" class="alert">
+                    <div class="ac" *ngIf="percentage.errors?.['required']">
+                        Aggregate Percentage is required.
+                    </div>
+                    <div class="ac" *ngIf="percentage.errors?.['pattern']">
+                        Please enter a valid percentage.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-40 passing-year">
+                <label for="passing-y">Year of Passing*</label>
+                <select [(ngModel)]="logineducationqualification.selectedyear" name="yearofpassing" >
+                    <option value="{{item.key}}" *ngFor="let item of logineducationqualification.yearofpassing | keyvalue">{{item.value}}
+                    </option>
+                </select>
+            </div>
+            <div class="mb-40 quali-info">
+                <div class="degree">
+                    <label class="tf-15" for="Qualification">Qualification*</label>
+                    <select [(ngModel)]="logineducationqualification.selectqualification" name="qualification" >
+                        <option value="{{qualification.key}}" *ngFor="let qualification of logineducationqualification.qualification | keyvalue">{{qualification.value}}
+                        </option>
+                    </select>
+                </div>
+                <div class="stream">
+                    <label for="stream">stream*</label>
+                    <select [(ngModel)]="logineducationqualification.selectstream" name="stream">
+                        <option value="{{stream.key}}" *ngFor="let stream of logineducationqualification.stream | keyvalue">{{stream.value}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-40 quali-info">
+                <div class="college">
+                    <label for="college-name">college*</label>
+                    <select [(ngModel)]="logineducationqualification.selectcollege" name="college" >
+                        <option value="{{college.key}}" *ngFor="let college of logineducationqualification.college | keyvalue">{{college.value}}
+                        </option>
+                    </select>
+                </div>
+                <div class="other">
+                    <p class="tf-15">If Other,Please Enter Your College Name*</p>
+                    <input type="text" name="college-name" id="collegename" placeholder="" [(ngModel)]="logineducationqualification.othername" required #ocollege="ngModel">
+                    <div  *ngIf="ocollege.invalid && (ocollege.touched)"class="alert">
+                        <div class="ac" *ngIf="ocollege.errors?.['required']">
+                            college name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-24">
+                <p class="tf-15">Where is your college Located?*</p>
+                <input type="email" name="location" id="location" placeholder=""
+                    [(ngModel)]="logineducationqualification.location" required minlength="3" #location="ngModel">
+                <div *ngIf="location.invalid && (location.touched)" class="alert">
+                    <div class="ac" *ngIf="location.errors?.['required']">
+                        please enter your college location.
+                    </div>
+                    <div class="ac" *ngIf="location.errors?.['minlength']">
+                        location name must be at least 3 characters long.
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="qualification-header">
+        <mat-panel-title>
+            Professional Qualification
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content2">
+        <form action="post" class="professional-Qualification-form">
+            <div class="choice">
+                <p class="tf-15">Application Type*</p>
+                <div class="choose-type">
+                    <div class="radio-input" *ngFor="let type of logineducationqualification.choose">
+                        <input type="radio" name="choosetype" id="new"
+                            [(ngModel)]="logineducationqualification.typeselected" value="{{type.value}}">
+                        <label for="{{type.name}}">{{type.name}}</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-expansion-panel>
+
+<app-fresher *ngIf="logineducationqualification.typeselected == 'fresher' "
+    [experienceddetail]="qualificationdetail"></app-fresher>
+<app-experienced *ngIf="logineducationqualification.typeselected != 'fresher' "
+    [experienceddetail]="qualificationdetail"></app-experienced>

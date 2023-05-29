@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="header">
+        <img src="../../assets/icon/Zeus-LMS-logo.svg" class="logo-img">
+    </div>
+    <div class="create-account">
+        <div class="back">
+            <img src="../../assets/icon/back.svg" class="back-icon">
+        </div>
+        <h2>Create an Account</h2>
+        <div class="btns">
+            <button class="btn1" mat-button>Cancel</button>
+            <button class="btn2" mat-button [disabled]="isbuttondisable()" (click)="showdetails()">Create</button>
+        </div>
+    </div>
+</div>

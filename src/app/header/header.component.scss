@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url("../../assets/font/static/Quicksand-Medium.ttf") format('truetype');
+    src: url("../../assets/font/static/Quicksand-Regular.ttf") format('truetype');
+    src: url("../../assets/font/static/Quicksand-SemiBold.ttf") format('truetype');
+    src: url("../../assets/font/static/Quicksand-Light.ttf") format('truetype');
+    src: url("../../assets/font/static/Quicksand-Bold.ttf") format('truetype');
+}
+  .container{
+    .header {
+        height: 58px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 29px;
+        background-color: #000000;
+        border-bottom: 2px solid #31B9E4;
+        background-image: url("../../assets/images/header\ pattern\ image.png");
+        img {
+            height: 36px;
+          }
+      }
+      .create-account{
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #3C4E62 0% 0% no-repeat padding-box;
+        h2{
+            margin: 0;
+            color: white;
+            margin-left: 10%;
+            font-family: 'Quicksand';
+        }
+        .back{
+            height: 24px;
+            width: 16px;
+            margin-left: 28px;
+        }
+        button{
+            width: 90px;
+            height: 28px;  
+            background: #3FD28B 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 5px #0000003D;
+            border-radius: 2px;
+            opacity: 1;
+            padding-right: 20px; 
+            text-transform: uppercase;
+        }
+        .btns{
+            padding-right: 24px;
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            .btn1,.btn2{
+                padding-left: 16px;
+            } 
+        }
+        }
+        
+
+      }
+  

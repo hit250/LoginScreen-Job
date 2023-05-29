@@ -1,0 +1,231 @@
+@import "../../assets/style/colores.scss";
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+  }
+  a{
+    text-decoration: none;
+  }
+  .container {
+    height: 100%;
+  }
+  
+  .mb-36 {
+    margin-bottom: 36px;
+  }
+  
+  .mb-61 {
+    margin-bottom: 61px;
+  }
+  
+  .mb-34 {
+    margin-bottom: 34px;
+  }
+  
+  .mb-33 {
+    margin-bottom: 33px;
+  }
+  
+  .mb-25 {
+    margin-bottom: 25px;
+  }
+  
+  .mb-26 {
+    margin-bottom: 26px;
+  }
+  
+  .mb-56 {
+    margin-bottom: 56px;
+  }
+  
+  .inline {
+    display: inline;
+  }
+  
+  .bold {
+    font-weight: 700;
+    color: black;
+  }
+  
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.header {
+    height: 58px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 29px;
+    background-color: $color1;
+    border-bottom: 2px solid #31B9E4;
+    background-image: url("../../assets/images/header\ pattern\ image.png");
+
+    img {
+        height: 36px;
+      }
+  }
+
+.content {
+  background-color: $color14;
+  display: grid;
+  min-height: calc(100% - 164px);
+  justify-content: center;
+  padding-top: 143px;
+  padding-bottom: 90px;
+  padding: 143px 208px 90px 208px;
+
+  .login-card {
+    max-width: 488px;
+    width: 100vw;
+    max-height: 475px;
+    background-color: $color8;
+    padding: 0px 32px 24px 32px;
+    border-top: 4px solid $color15;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    .form-title {
+      display: flex;
+      align-items: flex-end;
+
+      h2 {
+        margin: 24px auto 32px;
+        font-size: 30px;
+        color: $color1;
+      }
+    }
+
+    form {
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 600;
+
+      .radio-input {
+        display: flex;
+        align-items: center;
+        margin-bottom: 23px;
+        color: $color9;
+
+        label {
+          margin-right: 32px;
+          color: $color3;
+        }
+      }
+
+      .select {
+        label {
+          font-size: 12px;
+          margin-bottom: 5px;
+          color: $color9;
+        }
+      }
+
+      .credentials {
+        input {
+          margin-bottom: 5px;
+          padding-bottom: 7px;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        .preview {
+          #password {
+            position: absolute;
+          }
+
+          img {
+            position: relative;
+            left: 94%;
+            cursor: pointer;
+            margin-bottom: 4px;
+          }
+        }
+      }
+
+      input[type=checkbox] {
+        accent-color: $color4;
+        height: 24px;
+        width: 18px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+      }
+
+      input[type=submit] {
+        cursor: pointer;
+        height: 40px;
+        width: 215px;
+        display: block;
+        margin: 0 auto;
+        background-color: $color11;
+        border: none;
+        box-shadow: 0px 3px 5px #0000003D;
+        opacity: 1;
+      }
+
+      .full-input {
+        width: 424px;
+        border: none;
+        border-bottom: 1px solid $color7;
+      }
+
+      .forgot {
+        text-align: right;
+        color: $color4;
+        font-size: 14px;
+      }
+    }
+  }
+  .details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+    p{
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    a{
+      font-size: 18px;
+      color: $color4;
+      font-weight: 500;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 40px;
+  background-color: $color14;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+    color: $color4;
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  .rightBorder {
+    border-right: 1px solid $color1;
+  }
+
+}

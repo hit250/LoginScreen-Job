@@ -1,0 +1,28 @@
+<app-header [stepper]="stepperfirst" [personal]="personaldetails" [education]="educationdetails" [experience]="experienceddetails"></app-header>
+<div class="stepper">
+<mat-stepper #stepperfirst>
+    <mat-step>
+        <ng-template matStepLabel>Personal Information</ng-template>
+        <app-personalinfo [loginpersonaldetails]="personaldetails"></app-personalinfo>
+        <div class="btn">
+            <button class="nextbtn" mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Qualification</ng-template>
+        <app-qualification [logineducationqualification]="educationdetails" [qualificationdetail]="experienceddetails"></app-qualification>
+        <div class="btn">
+            <button class="previousbtn" mat-button matStepperPrevious>Previous</button>
+        <button class="nextbtn" mat-button matStepperNext>Next</button>
+        </div> 
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Review And Process</ng-template>
+        <app-reviewprocced [loginpersonaldetailsreview]="personaldetails" [qualificationdetailreview]="educationdetails" [commondetail]="experienceddetails"></app-reviewprocced>
+        <div class="btn">
+            <button class="previousbtn" mat-button matStepperPrevious>Previous</button>
+        </div>
+    </mat-step>
+</mat-stepper>
+</div>
+

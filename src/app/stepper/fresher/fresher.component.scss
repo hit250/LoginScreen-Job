@@ -1,0 +1,75 @@
+.freshervisible{
+  visibility:hidden;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateY(-3em);
+  transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
+}
+
+.fresher{
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 24px;
+    .skillcheck{
+        .check{
+            display: flex;
+            flex-direction: row;
+            input[type=checkbox] {
+                accent-color: #1F7A54;
+                width: 18px;
+                height: 24px;
+                margin-right: 5px;
+              }
+              p{
+                font-size: 20px;
+                padding-left: 9px;
+                color: #222222;
+                margin-top: 4px;
+                letter-spacing: 0px;
+                opacity: 1;
+              }
+        }
+        input[type=text] {
+            margin-bottom: 16px;
+            width: 452px;
+            font-size: 20px;
+            font-weight: 400px;
+            color: #222222;
+            opacity: 1;
+          }
+    }
+    .zeus-test{
+        margin-bottom: 16px;
+        .test-appearence{
+          display: flex;
+          flex-direction: row;
+          .radio-input {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0px;
+            color: #222222;
+
+            label {
+                margin-right: 24px;
+                margin-top: 4px;
+                color: #222222;
+              }
+
+              input[type=radio] {
+                accent-color: #1F7A54;
+                margin-right: 8px;
+                width: 20px;
+                height: 24px;
+              }
+          }
+        }
+    
+    }
+    .apply{
+        input[type=text] {
+            width: 452px;
+    }
+}
+}

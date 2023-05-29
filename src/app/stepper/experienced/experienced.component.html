@@ -1,0 +1,127 @@
+<div class="experienced ">
+    <form action="post" class="experienced-form">
+    <div class="mb-40 ">
+        <p class="tf-15">Year Of Experience*</p>
+        <input type="text" name="experience" id="experience" placeholder="" [(ngModel)]="experienceddetail.yearofexperience" required pattern="[0-9]{2}" #experience="ngModel">
+        <div *ngIf="experience.invalid && experience.touched" class="alert">
+            <div class="ac" *ngIf="experience.errors?.['required']">
+                experience is required.
+            </div>
+            <div class="ac" *ngIf="experience.errors?.['pattern']">
+              Please enter a valid experience year.
+            </div>
+          </div>
+    </div>
+    <div class="mb-40">
+        <p class="tf-15">Current CTC(in Rupees)*</p>
+        <input type="text" name="c-ctc" id="current-ctc" placeholder="" [(ngModel)]="experienceddetail.cctc" required pattern="[0-9]" #cctc="ngModel">
+        <div *ngIf="cctc.invalid && cctc.touched" class="alert">
+            <div class="ac" *ngIf="cctc.errors?.['required']">
+                your current ctc is required.
+            </div>
+            <div class="ac" *ngIf="cctc.errors?.['pattern']">
+                Please enter a valid ctc.
+            </div>
+          </div>
+    </div>
+    <div class="mb-40">
+        <p class="tf-15">Expected CTC(in Rupees)*</p>
+        <input type="text" name="e-ctc" id="expected-ctc" placeholder="" [(ngModel)]="experienceddetail.exctc" required pattern="[0-9]" #exctc="ngModel">
+        <div *ngIf="exctc.invalid && exctc.touched" class="alert">
+            <div class="ac" *ngIf="exctc.errors?.['required']">
+                your expected ctc is required.
+            </div>
+            <div class="ac" *ngIf="exctc.errors?.['pattern']">
+                Please enter a valid ctc.
+            </div>
+          </div>
+    </div>
+    <div class="mb-40 skillcheck">
+        <p class="tf-15">Select All the Technology you are Expertise in</p>
+        <div class="check" *ngFor="let skill of experienceddetail.technologyex">
+            <input type="checkbox" name={{skill.name}} [(ngModel)]="skill.selected">
+            <p class="inline">{{skill.name}}</p>
+        </div>      
+        <div *ngIf="!checktechnoloogy()" class="alert">
+            <div class="ac mb-12">
+              Please select at least one technology.
+            </div>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">If Other please mention*</p>
+            <input type="text" name="Other-skill" id="otherskill" placeholder="" [(ngModel)]="experienceddetail.othertechnology" required #teck="ngModel">
+            <div *ngIf="teck.invalid && (teck.touched)" class="alert">
+                <div class="ac" *ngIf="teck.errors?.['required']">
+                    please enter other-technology.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skillcheck">
+        <p class="tf-15">Select All the Technology you are Familiar in</p>
+        <div class="check" *ngFor="let skill of experienceddetail.technologyfamilier">
+            <input type="checkbox" name={{skill.name}} [(ngModel)]="skill.selected">
+            <p class="inline">{{skill.name}}</p>
+        </div>
+        <div *ngIf="!checktechnoloogyfa()" class="alert">
+            <div class="ac mb-12">
+              Please select at least one technology.
+            </div>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">If Other please mention*</p>
+            <input type="text" name="Otherfamilier-skill" id="otherfamilierskill" placeholder="" [(ngModel)]="experienceddetail.othertechnologyfa" required #otteck="ngModel">
+            <div *ngIf="otteck.invalid && (otteck.touched)" class="alert">
+                <div class="ac" *ngIf="otteck.errors?.['required']">
+                    please enter technology.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choice">
+        <p class="tf-15">Are you currently on Notice Period?*</p>
+        <div class="notice-session">
+            <div class="radio-input" *ngFor="let notice of experienceddetail.notice">
+                <input type="radio" name=noticeconfermation id="positive" [(ngModel)]="experienceddetail.noticeselected" value={{notice.value}}>
+                <label for="{{notice.name}}">{{notice.name}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="nend mb-40">
+        <div class="date">
+            <p class="tf-15">if yes when will your Notice Period end?*</p>
+            <input type="date" name="date" placeholder="" [(ngModel)]="experienceddetail.date" required #date="ngModel">
+            <div *ngIf="date.invalid && (date.touched)" class="alert">
+                <div class="ac" *ngIf="date.errors?.['required']">
+                    please enter date.
+                </div>
+            </div>
+        </div>
+      
+        <div class="n-duration">
+            <p class="tf-15">How long your Notice Period?*</p>
+                <select [(ngModel)]="experienceddetail.selecteduration" name="noticep">
+                    <option placeholder="" value="{{month.key}}" *ngFor="let month of experienceddetail.durationonotice | keyvalue">{{month.value}}</option>
+                </select>
+            </div>
+        </div>
+    <div class="choice">
+        <p class="tf-15">Have you appeared for any test By zeus in the past 12 Months?*</p>
+        <div class="notice-session">
+            <div class="radio-input"  *ngFor="let appear of experienceddetail.testappereance">
+                <input type="radio" name="button" id="positive" [(ngModel)]="experienceddetail.textappearenceselected" value="{{appear.value}}">
+                <label for="yes">{{appear.name}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="mb-40 apply-role">
+        <p class="tf-15">if yes,Which Role Did you Apply for?*</p>
+        <input type="text" name="apply-role" placeholder="" [(ngModel)]="experienceddetail.applyrole" required #applyrole="ngModel">
+        <div *ngIf="applyrole.invalid && applyrole.touched" class="alert">
+            <div class="ac" *ngIf="applyrole.errors?.['required']">
+                please enter apply role.
+            </div>
+        </div>
+    </div>
+</form>
+</div>

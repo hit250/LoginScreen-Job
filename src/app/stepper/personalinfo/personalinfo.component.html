@@ -1,0 +1,102 @@
+<div class="personal">
+    <div class="left">
+        <form name="myform" action="post" class="login-form" >
+            <div class="mb-40">
+                <p class="tf-15">First Name*</p>
+                <input type="text" name="firstname" id="Firstname" placeholder="" [(ngModel)]="loginpersonaldetails.firstname" required minlength="3" #fname="ngModel">
+                <div  *ngIf="fname.invalid && (fname.touched)"class="alert">
+                    <div class="ac" *ngIf="fname.errors?.['required']">
+                        firstName is required.
+                    </div>
+                    <div class="ac" *ngIf="fname.errors?.['minlength']">
+                        firstName must be at least 3 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">Last Name*</p>
+                <input type="text" name="last-Name" id="Lastname" placeholder="" [(ngModel)]="loginpersonaldetails.lastname" required minlength="4" #lname="ngModel">
+                <div  *ngIf="lname.invalid && (lname.touched)"class="alert">
+                    <div class="ac" *ngIf="lname.errors?.['required']">
+                        lasttName is required.
+                    </div>
+                    <div class="ac" *ngIf="lname.errors?.['minlength']">
+                        lastName must be at least 4 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">Email*</p>
+                <input type="email" name="email" id="email" placeholder="" [(ngModel)]="loginpersonaldetails.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}" #email="ngModel">
+                <div *ngIf="email.invalid && email.touched" class="alert">
+                    <div class="ac" *ngIf="email.errors?.['required']">
+                      Email is required.
+                    </div>
+                    <div class="ac" *ngIf="email.errors?.['pattern']">
+                      Please enter a valid email address.
+                    </div>
+                  </div>
+            </div>
+            <div class="mb-40 pnumber">
+                <p class="tf-15">Phone No*</p>
+                <input type="text" name="phone-no" id="phoneno" placeholder="" [(ngModel)]="loginpersonaldetails.phoneno" required pattern="[0-9]{10}" #phone="ngModel">
+                <div *ngIf="phone.invalid && phone.touched" class="alert">
+                    <div class="ac" *ngIf="phone.errors?.['required']">
+                      Phone number is required.
+                    </div>
+                    <div class="ac" *ngIf="phone.errors?.['pattern']">
+                      Please enter a valid 10-digit phone number.
+                    </div>
+                  </div>
+            </div>
+            <div class="mb-40 upload ">
+                <div class="uimg">
+                <img src="../../assets/icon/Upload_black_24dp.svg" alt="upload button">
+                </div>
+                <p class="tf-15">upload Resume</p>
+            </div>
+            <div class="mb-40" >
+                <p class="tf-15">Enter Protfolio URL(if any)</p>
+                <input type="email" name="protfolio" id="protfolio" placeholder="" [(ngModel)]="loginpersonaldetails.protfoliourl" required pattern="[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" #protfolio="ngModel">
+                <div *ngIf="protfolio.invalid && protfolio.touched" class="alert">
+                    <div class="ac" *ngIf="protfolio.errors?.['required']">
+                      Protfolio URL is required.
+                    </div>
+                    <div class="ac" *ngIf="protfolio.errors?.['pattern']">
+                      Please enter a valid Protfolio URL.
+                    </div>
+                  </div>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">preferred job roles*</p>
+            <div class="checkbox" *ngFor="let job of loginpersonaldetails.preferredjobrole">
+                <input type="checkbox" [(ngModel)]="job.selected" name="{{job.name}}">
+                <p class="inline">{{job.name}}</p>
+            </div>
+            <div *ngIf="!checkPreferredJobRoles()" class="alert">
+                <div class="ac">
+                  Please select at least one preferred job role.
+                </div>
+            </div>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">if you registering via A Referral,please mention Full Name of The <br>Employee who Referred you</p>
+            <input type="email" name="Referral" id="Referral" placeholder="" [(ngModel)]="loginpersonaldetails.referedemploye" required #referral="ngModel">
+            <div  *ngIf="referral.invalid && (referral.touched)"class="alert">
+                <div class="ac" *ngIf="referral.errors?.['required']">
+                    referral is required.
+                </div>
+            </div>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="send mail" [(ngModel)]="loginpersonaldetails.sendme">
+            <p class="inline">send me job related updates via a mail</p>
+        </div>
+        </form>
+    </div>
+    <div class="right">
+        <img src="../../assets/icon/account_circle.svg" alt="upload image">
+        <a href="">UPLOAD Display pichture</a>
+        <p>max img size: 5 MB</p>
+    </div>
+</div>

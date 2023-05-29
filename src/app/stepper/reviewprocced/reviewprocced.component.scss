@@ -1,0 +1,226 @@
+.title{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    p{
+        font-size: 20px;
+        color: #222222;
+    }
+    .edit{
+        display: flex;
+
+        img{
+            width: 25px;
+            height: 25px;
+        }
+        p{
+            font-size: 20px;
+            color: #1F7A54;
+            margin-left: 9px;
+            margin-top: 3px;
+        }
+    }
+}
+
+
+.personal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 24px;
+
+    .left{
+        .pnumber{
+            input{
+                width: 134px;
+            }
+        }
+        .upload{
+            display: flex;
+            .uimg{
+                img{
+                    accent-color: #222222;
+                }
+            }
+            
+            p{
+                font-size: 18px;
+                color: #222222;
+                padding-top: 2px;
+            }
+            .p-review{
+                padding-top: 2px;
+                padding-left: 8px;
+            }
+        }
+        .job-role{
+            display: flex;
+            flex-direction: column;
+            .job-name{
+                font-size: 20px;
+                color: #222222;
+
+            }
+        }
+        .checkbox{
+            display: flex;
+            input[type=checkbox] {
+                accent-color: #222222;
+                height: 24px;
+                width: 18px;
+                margin-right: 5px;
+              }
+              p{
+                font-size: 20px;
+                padding-left: 9px;
+                color: #222222;
+                margin-top: 4px;
+                font-weight: 400px;
+              }
+        }
+    }
+    .p-review{
+        font-size: 20px;
+        color: #222222;
+    }
+    .right{
+        padding-right: 48px;
+        img{
+            width: 112px;
+            height: 134px;
+            padding-left: 34px;
+        }
+    }
+}
+
+.mat-expansion-panel{
+    // background-color: #DBEFFF;
+    box-shadow: 0px 4px 6px #00000029;
+    opacity: 1;
+    margin-top: 16px;
+    div{
+        background-color: white;
+    }
+
+    .mat-panel-title{
+        font-size: 20px;
+        text-align: left;
+        letter-spacing: 0px;
+        color: #222222;
+        opacity: 1;
+        }
+}
+.qualification-header{
+    background-color: #DBEFFF;
+}
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover{
+    background-color: #DBEFFF;
+}
+
+.edu-qualification{
+    margin-top: 24px;
+    .eq-review{
+    font-size: 20px;
+    color: #222222;
+    }
+    #Percentage{
+        width: 180px;
+        font-size: 20px;
+        color: #222222;
+    }
+    .passing-year{
+        display: flex;
+        flex-direction: column;
+    }
+    .quali-info{
+        display: flex;
+        flex-direction: row;
+        .degree{
+            display: flex;
+            flex-direction: column;
+            margin-right: 236px;
+        }
+        .college{
+            display: flex;
+            flex-direction: column;
+            margin-right: 256px;
+        }
+        .stream{
+            display: flex;
+            flex-direction: column;
+        }
+        .other{
+            display: flex;
+            flex-direction: column;
+    margin-left: 25px;
+
+        }
+    }
+
+    #location{
+        width: 183px;
+        font-size: 20px;
+        color: #222222;
+    }
+}
+
+.proff-qualification{
+    margin-top: 24px;
+    .pq-review{
+        font-size: 20px;
+        color: #222222;
+    }
+}
+
+.fresher{
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 24px;
+
+    .freview{
+        font-size: 20px;
+        color: #222222;
+    }
+    .skillcheck{
+        .select-tech{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+}
+
+.experienced{
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 24px;
+
+    #current-ctc,#expected-ctc ,#experience{
+            width: 180px;
+            font-size: 20px;
+            font-weight: 400px;
+            color: #222222;
+            opacity: 1;
+    }
+    .skillcheck{
+        margin-bottom: 16px;
+        .check{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .nend{
+        display: flex;
+        flex-direction: row;
+       .date{
+        margin-right: 233px;
+       }
+    }
+    .ex-review{
+        font-size: 20px;
+        color: #222222;
+    }
+}

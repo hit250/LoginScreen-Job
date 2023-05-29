@@ -1,0 +1,230 @@
+<div class="title">
+    <p>Personal Information</p>
+    <div class="edit">
+        <img src="../../assets/icon/icons8-edit.svg" alt="">
+        <p>Edit</p>
+    </div>
+</div>
+<div class="personal">
+    <div class="left">
+        <div class="login-form" >
+            <div class="mb-40">
+                <p class="tf-15">First Name*</p>
+                <span class="p-review">{{loginpersonaldetailsreview.firstname}}</span>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">Last Name*</p>
+                <span class="p-review">{{loginpersonaldetailsreview.lastname}}</span>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">Email*</p>
+                <span class="p-review">{{loginpersonaldetailsreview.email}}</span>
+            </div>
+            <div class="mb-40 pnumber">
+                <p class="tf-15">Phone No*</p>
+                <span class="p-review">{{loginpersonaldetailsreview.phoneno}}</span>
+            </div>
+            <div class="mb-40 upload ">
+                <div class="uimg">
+                <img src="../../assets/icon/Upload_black_24dp.svg" alt="upload button">
+                </div>
+                <p class="tf-15">upload Resume</p>
+                <span class="p-review">MyResume.pdf</span>
+            </div>
+            <div class="mb-40" >
+                <p class="tf-15">Enter Protfolio URL(if any)</p>
+                <span class="p-review">{{loginpersonaldetailsreview.protfoliourl}}</span>
+            </div>
+            <div class="mb-40" >
+                <p class="tf-15">preferred job roles*</p>
+                <div class="job-role">
+                    <ng-container  *ngFor="let role of loginpersonaldetailsreview.preferredjobrole">
+                        <span class="job-name mt-12" *ngIf="role.selected" >{{role.name}}</span>
+                    </ng-container>
+                </div>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">if you registering via A Referral,please mention Full Name of The <br>Employee who Referred you</p>
+            <span class="p-review">{{loginpersonaldetailsreview.referedemploye}}</span>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="send mail" [checked] = "loginpersonaldetailsreview.sendme" /> 
+            <p class="inline">send me job related updates via a mail</p>
+        </div>
+    </div>
+    </div>
+    <div class="right">
+        <img src="../../assets/icon/account_circle.svg" alt="upload image">
+    </div>
+</div> 
+<div class="title">
+    <p>Qualifications</p>
+    <div class="edit">
+        <img src="../../assets/icon/icons8-edit.svg" alt="">
+        <p>Edit</p>
+    </div>
+</div>
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+    <mat-expansion-panel-header class="qualification-header">
+        <mat-panel-title>
+            Education Qualification
+        </mat-panel-title>
+    </mat-expansion-panel-header >
+    <div class="edu-qualification">
+        <div class="Education-Qualification-form">
+            <div class="mb-40">
+                <p class="tf-15">Aggregate Percentage*</p>
+                <span class="eq-review">{{qualificationdetailreview.percentage}}</span>
+            </div>
+            <div class="mb-40 passing-year" >
+                <label for="passing-y">Year of Passing*</label>
+                <ng-container >
+                    <span class="mt-12 eq-review">{{qualificationdetailreview.yearofpassing[qualificationdetailreview.selectedyear]}}</span>
+                </ng-container>
+            </div>
+            <div class="mb-40 quali-info">
+                <div class="degree" >
+                    <label class="tf-15" for="Qualification">Qualification*</label>
+                   <ng-container >
+                    <span class="mt-12 eq-review">{{qualificationdetailreview.qualification[qualificationdetailreview.selectqualification]}}</span>
+                   </ng-container>
+                </div>
+                <div class="stream">
+                    <label for="stream">stream*</label>
+                    <ng-container>
+                        <span class="mt-12 eq-review">{{qualificationdetailreview.stream[qualificationdetailreview.selectstream]}}</span>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="mb-40 quali-info">
+                <div class="college">
+                    <label for="college-name">college*</label>
+                    <ng-container>
+                        <span class="mt-12 eq-review">{{qualificationdetailreview.college[qualificationdetailreview.selectcollege]}}</span>
+                    </ng-container>
+                </div>
+                <div class="other">
+                    <label for="other-location" class="tf-15">If Other,Please Enter Your College Name*</label>
+                    <span class="eq-review" >{{qualificationdetailreview.othername}}</span>
+                </div>
+            </div>
+            <div class="mb-24">
+                <p class="tf-15">Where is your college Located?*</p>
+                <span class="eq-review" >{{qualificationdetailreview.location}}</span>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="qualification-header">
+        <mat-panel-title>
+            Professional Qualification
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="proff-qualification">
+        <div class="choice mb-24">
+          <p class="tf-15">Application Type*</p>
+          <ng-container *ngFor="let type of qualificationdetailreview.choose">
+            <span class="pq-review" *ngIf="qualificationdetailreview.typeselected === type.value">{{type.name}}</span>
+          </ng-container>
+        </div>
+      </div>
+</mat-expansion-panel>
+<div class="fresher" *ngIf = " qualificationdetailreview.typeselected == 'fresher' ">
+    <div class="fresher-form">
+    <div class="skillcheck mb-40">
+        <p class="tf-15">Select All the Technology you are Expertise in</p>
+        <div class="select-tech">
+            <ng-container class="check" *ngFor="let skill of commondetail.technologyex">
+                <span class="freview mb-12" *ngIf="skill.selected" >{{skill.name}}</span>
+            </ng-container>
+        </div>
+        <div class="mb-40 mt-18">
+            <p class="tf-15">If Other please mention*</p>
+            <span >{{commondetail.othertechnology}}</span>
+        </div>
+    </div>
+    <div class="zeus-test">
+        <p class="tf-15">Have you appeared for any test By zeus in the past 12 Months?*</p>
+        <div class="test-appearence">
+            <ng-container *ngFor="let appear of commondetail.testappereance">
+                <span ngClass="freview" class="pq-review" *ngIf="commondetail.textappearenceselected == appear.value" >{{appear.name}}</span>
+            </ng-container>
+        </div>
+    </div>
+    <div class="mb-24 apply  mt-18">
+        <p class="tf-15">if yes,Which Role Did you Apply for?*</p>
+        <span class="freview" >{{commondetail.applyrole}}</span>
+    </div>
+</div>
+</div>
+<div class="experienced" *ngIf = " qualificationdetailreview.typeselected != 'fresher' ">
+    <div class="experienced-form">
+    <div class="mb-40 ">
+        <p class="tf-15">Year Of Experience*</p>
+        <span class="ex-review" >{{commondetail.yearofexperience}}</span>
+    </div>
+    <div class="mb-40">
+        <p class="tf-15">Current CTC(in Rupees)*</p>
+        <span class="ex-review" >{{commondetail.cctc}}</span>
+    </div>
+    <div class="mb-40">
+        <p class="tf-15">Expected CTC(in Rupees)*</p>
+        <span class="ex-review" >{{commondetail.exctc}}</span>
+    </div>
+    <div class="mb-40 skillcheck">
+        <p class="tf-15">Select All the Technology you are Expertise in</p>
+        <div class="check mb-16">
+            <ng-container *ngFor="let teck of commondetail.technologyex">
+                <span class="ex-review mb-12" *ngIf="teck.selected" >{{teck.name}}</span>
+            </ng-container>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">If Other please mention*</p>
+            <span class="ex-review" >{{commondetail.othertechnology}}</span>
+        </div>
+    </div>
+    <div class="skillcheck">
+        <p class="tf-15">Select All the Technology you are Familiar in</p>
+        <div class="check mb-16">
+            <ng-container *ngFor="let teck of commondetail.technologyfamilier">
+                <span class="ex-review mb-12" *ngIf="teck.selected" >{{teck.name}}</span>
+            </ng-container>
+        </div>
+        <div class="mb-40">
+            <p class="tf-15">If Other please mention*</p>
+            <span class="ex-review">{{commondetail.othertechnologyfa}}</span>
+        </div>
+    </div>
+    <div class="choice mb-16">
+        <p class="tf-15">Are you currently on Notice Period?*</p>
+            <ng-container *ngFor="let noticep of commondetail.notice">
+                <span class="ex-review" *ngIf="commondetail.noticeselected == noticep.value" >{{noticep.name}}</span>
+            </ng-container>
+    </div>
+    <div class="nend mb-40">
+        <div class="date">
+            <p class="tf-15">if yes when will your Notice Period end?*</p>
+            <span class="ex-review" >{{commondetail.date}}</span>
+        </div>
+        <div class="n-duration">
+            <p class="tf-15">How long your Notice Period?(Mention in Months)*</p>
+            <ng-container >
+                <span class="ex-review" >{{commondetail.durationonotice[commondetail.selecteduration]}}</span>
+            </ng-container>
+            </div>
+        </div> 
+    <div class="choice mb-16">
+        <p class="tf-15">Have you appeared for any test By zeus in the past 12 Months?*</p>
+        <div class="test-appearence">
+            <ng-container *ngFor="let appear of commondetail.testappereance">
+                <span class="ex-review"  *ngIf="commondetail.textappearenceselected == appear.value">{{appear.name}}</span>
+            </ng-container>
+        </div>
+    </div>
+    <div class="mb-40 apply-role">
+        <p class="tf-15">if yes,Which Role Did you Apply for?*</p>
+        <span class="ex-review">{{commondetail.applyrole}}</span>
+    </div>
+</div>
+</div> 

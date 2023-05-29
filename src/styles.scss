@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+$Quantum1-primary: mat.define-palette(mat.$indigo-palette);
+$Quantum1-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$Quantum1-warn: mat.define-palette(mat.$red-palette);
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url("../src/assets/font/static/Quicksand-Medium.ttf") format('truetype');
+    src: url("../src/assets/font/static/Quicksand-Regular.ttf") format('truetype');
+    src: url("../src/assets/font/static/Quicksand-SemiBold.ttf") format('truetype');
+    src: url("../src/assets/font/static/Quicksand-Light.ttf") format('truetype');
+    src: url("../src/assets/font/static/Quicksand-Bold.ttf") format('truetype');
+}
+
+$my-typography: mat.define-typography-config(
+    $font-family: 'Quicksand',
+);
+
+$Quantum1-theme: mat.define-light-theme((
+  color: (
+    primary: $Quantum1-primary,
+    accent: $Quantum1-accent,
+    warn: $Quantum1-warn,
+    ),
+    typography: $my-typography
+));
+
+@include mat.all-component-themes($Quantum1-theme);
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    height: 100vh;
+    background-color: #EEEEEE;
+    }
+    .mb-40 {
+        margin-bottom: 40px;
+    }
+    
+    .mb-24 {
+        margin-bottom: 24px;
+    }
+    .mb-12 {
+        margin-bottom: 12px;
+    }
+    .mt-18{
+        margin-top: 18px;
+    }
+    .mt-12 {
+        margin-top: 12px;
+    }
+    .mb-16 {
+        margin-bottom: 16px;
+    }
+    .tf-15{
+        font-size: 15px;
+        color: #666666;
+    }
+    input,select{
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #000000;
+        color: #222222;
+        font-family: inherit;
+    }
+    button{
+        font-family: in;
+    }
+    a{
+        text-decoration: none;
+    }
+    .ac{
+        color: rgb(199, 22, 22);
+    }
+    

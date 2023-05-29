@@ -1,0 +1,121 @@
+.mat-expansion-panel{
+    box-shadow: 0px 4px 6px #00000029;
+    opacity: 1;
+    margin-top: 24px;
+    div{
+        background-color: white;
+    }
+
+    .mat-panel-title{
+        font-size: 20px;
+        text-align: left;
+        letter-spacing: 0px;
+        color: #222222;
+        opacity: 1;
+        }
+}
+.qualification-header{
+    background-color: #DBEFFF;
+}
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover{
+    background-color: #DBEFFF;
+}
+.content1{
+    margin-top: 24px;
+    #Percentage{
+        width: 180px;
+        font-size: 20px;
+        color: #222222;
+    }
+    .passing-year{
+        display: flex;
+        flex-direction: column;
+        select {
+            background-image: url("../../../assets/icon/arrow-down.svg");
+            background-repeat: no-repeat;
+            background-size: 25px;
+            background-position: calc(100% + 4px) center;
+            width: 180px;
+            border: none;
+            font-size: 20px;
+            padding-top: 12px;
+            border-bottom: 1px solid #222222 ;
+        }
+    }
+    .quali-info{
+        display: flex;
+        flex-direction: row;
+        .degree ,.college{
+            display: flex;
+            flex-direction: column;
+            margin-right: 24px;
+                select {
+                    margin-top: 12px;
+                    background-image: url("../../../assets/icon/arrow-down.svg");
+                    background-repeat: no-repeat;
+                    background-size: 25px;
+                    background-position: calc(100% + 4px) center;
+                    width: 452px;
+                    border: none;
+                    font-size: 20px;
+                    border-bottom: 1px solid #222222 ;
+                }
+        }
+        .stream{
+            display: flex;
+            flex-direction: column;
+            select {
+                margin-top: 12px;
+                background-image: url("../../../assets/icon/arrow-down.svg");
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: calc(100% + 4px) center;
+                width: 452px;
+                border: none;
+                font-size: 20px;
+                border-bottom: 1px solid #222222 ;
+            }
+        }
+        .other{
+            input{
+            width: 452px;
+            font-size: 20px;
+            color: #222222;
+            }
+        }
+    }
+
+    #location{
+        width: 183px;
+        font-size: 20px;
+        color: #222222;
+    }
+}
+.content2{
+    margin-top: 24px;
+    .choice{
+        .choose-type{
+            display: flex;
+            flex-direction: row;
+            .radio-input {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0px;
+                color: #222222;
+    
+                label {
+                    margin-right: 32px;
+                    margin-top: 4px;
+                    color: #222222;
+                  }
+    
+                  input[type=radio] {
+                    accent-color: #1F7A54;
+                    margin-right: 8px;
+                    width: 20px;
+                    height: 24px;
+                  }
+              }
+        }
+    }
+}

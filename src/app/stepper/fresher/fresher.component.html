@@ -1,0 +1,44 @@
+    <div class="fresher ">
+        <form action="post" class="fresher-form">
+        <div class="skillcheck mb-40">
+            <p class="tf-15">Select All the Technology you are Expertise in</p>
+            <div class="check" *ngFor="let skill of experienceddetail.technologyex">
+                <input type="checkbox" name={{skill.name}} [(ngModel)]="skill.selected">
+                <p class="inline">{{skill.name}}</p>
+            </div>
+            <div *ngIf="!checktechnoloogy()" class="alert">
+                <div class="ac mb-12">
+                  Please select at least one technology.
+                </div>
+            </div>
+            <div class="mb-40">
+                <p class="tf-15">If Other please mention*</p>
+                <input type="text" name="Other-skill" id="otherskill" [(ngModel)]="experienceddetail.othertechnology" required #oskill="ngModel">
+                <div *ngIf="oskill.invalid && (oskill.touched)" class="alert">
+                    <div class="ac" *ngIf="oskill.errors?.['required']">
+                        please enter other skills.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="zeus-test">
+            <p class="tf-15">Have you appeared for any test By zeus in the past 12 Months?*</p>
+            <div class="test-appearence">
+                <div class="radio-input" *ngFor="let appear of experienceddetail.testappereance">
+                    <input type="radio" name="button" id="{{appear.name}}" [(ngModel)]="experienceddetail.textappearenceselected" value="{{appear.value}}">
+                    <label for={{appear.name}}>{{appear.name}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="mb-24 apply">
+            <p class="tf-15">if yes,Which Role Did you Apply for?*</p>
+            <input type="text" name="apply-role" placeholder="" [(ngModel)]="experienceddetail.applyrole" required #applyrole="ngModel">
+            <div *ngIf="applyrole.invalid && (applyrole.touched)" class="alert">
+                <div class="ac" *ngIf="applyrole.errors?.['required']">
+                    please enter apply-role.
+                </div>
+            </div>
+        </div>
+</form>
+</div>

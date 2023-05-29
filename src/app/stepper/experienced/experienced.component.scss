@@ -1,0 +1,109 @@
+#experiencevisible{
+    visibility:visible;
+    // opacity: 0;
+    // z-index: 2;
+    // position: absolute;
+    // transform: translateY(-3em);
+    // transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
+  }
+
+.experienced{
+    visibility:visible;
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 24px;
+
+    #current-ctc,#expected-ctc ,#experience{
+            width: 180px;
+            font-size: 20px;
+            font-weight: 400px;
+            color: #222222;
+            opacity: 1;
+    }
+    .skillcheck{
+        margin-bottom: 16px;
+        .check{
+            display: flex;
+            flex-direction: row;
+            input[type=checkbox] {
+                accent-color: #1F7A54;
+                width: 18px;
+                height: 24px;
+                margin-right: 5px;
+              }
+              p{
+                font-size: 20px;
+                padding-left: 9px;
+                color: #222222;
+                margin-top: 4px;
+                letter-spacing: 0px;
+                opacity: 1;
+              }
+        }
+        input[type=text] {
+            margin-bottom: 16px;
+            width: 452px;
+            font-size: 20px;
+            font-weight: 400px;
+            color: #222222;
+            opacity: 1;
+          }
+    }
+    .choice{
+        margin-bottom: 16px;
+            .notice-session{
+                display: flex;
+                flex-direction: row;
+                .radio-input {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0px;
+                    color: #222222;
+        
+                    label {
+                        margin-right: 32px;
+                        margin-top: 4px;
+                        color: #222222;
+                      }
+        
+                      input[type=radio] {
+                        accent-color: #1F7A54;
+                        margin-right: 8px;
+                        width: 20px;
+                        height: 24px;
+                      }
+                  }
+            }
+        }       
+    .nend{
+        display: flex;
+        flex-direction: row;
+        
+        .date{
+            padding-right: 24px;
+            input{
+                width: 452px;
+                font-size: 20px;
+            }
+        }
+        .n-duration{
+            select {
+                background-image: url("../../../assets/icon/arrow-down.svg");
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: calc(100% + 4px) center;
+                width: 452px;
+                border: none;
+                font-size: 20px;
+                border-bottom: 1px solid #222222 ;
+            }
+        }
+    }
+    .apply-role{
+        input{
+        width: 452px;
+        font-size: 20px;
+        color: #222222;
+        }
+    }
+}
